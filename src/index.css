@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Body/canvas colours are owned by the shared preset (`@pos/ui/tailwind-preset`),
+ * which injects them from the theme tokens. They are deliberately not repeated
+ * here with `@apply`: `@apply` needs the resolved Tailwind theme at build time,
+ * so it turns a wrong config path into a fatal PostCSS error instead of a
+ * graceful fallback.
+ */
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  /* Tabular figures keep currency and quantities aligned in tables. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
